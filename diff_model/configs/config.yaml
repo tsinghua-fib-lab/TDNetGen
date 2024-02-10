@@ -1,0 +1,15 @@
+defaults:
+    # - general : general_bipartite-827-real
+    - general: general_static_guide_for_data_enhance
+    - model : discrete
+    # - train : train_mutual_general_bipartite-adapt
+    - train: train_default
+    # - dataset : mutual
+    - dataset: regulatory
+
+hydra:
+    run:
+        dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}_${general.comment}
+
+
+

@@ -1,0 +1,76 @@
+# General settings
+bipartite: False
+test_general: False
+name: 'graph-tf-model'      # Warning: 'debug' and 'test' are reserved name that have a special behavior
+
+wandb: 'online'             # online | offline | disabled
+gpus: 1                    # Multi-gpu is not implemented on this branch
+gpu_ids: 3                 # 0--2 1--3 2--4 3--5 4--0 5--1
+gpu_map: False
+
+frac: False
+length: False
+wo_finetune: False
+
+
+resume: null            # If resume, path to ckpt file from outputs directory in main directory
+test_only: null         # Use absolute path
+
+check_val_every_n_epochs: 5 # 5
+sample_every_val: 4 # 4
+val_check_interval: null
+samples_to_generate: 16       # We advise to set it to 2 x batch_size maximum
+samples_to_save: 10
+chains_to_save: 1
+log_every_steps: 50
+number_chain_steps: 50        # Number of frames in each gif
+
+final_model_samples_to_generate: 250
+final_model_samples_to_save: 30
+final_model_chains_to_save: 20
+
+evaluate_all_checkpoints: False
+conditional: False
+type: 'flexible'
+fix_num: 29
+patience: 10
+ne: True
+comment: none
+train: False
+load: True
+
+reverse: False
+control_strategy: 'resilience'
+control_ratio: 1.0
+to_all: True # can we modify edges between controlled nodes and any other node, or only between controlled nodes
+
+# special
+minorcontrol: False
+heuristic: True
+
+#minorcontrol
+unknown_rate: False
+select_ratio: 0.1
+
+#Generate small ramdom perturbed data on edges
+perturb_rate: null
+
+#Generate small random node removal data
+remove_rate: null
+larger_dataset: False
+
+#Guidance
+use_guidance: True
+
+guidance_model_type: 'static'
+
+
+guidance_direction: 1
+
+lambda_guidance: 2000
+save_intermediate: True
+
+clasf_resi: True
+use_encoder: True
+generalize: True
+adapt: True

@@ -1,0 +1,8 @@
+name: resi
+dyna: neuronal
+mech: 3
+beta_c: 6.61 #6.61
+remove_h: null
+data_file_path: 'diffusion/neuronal/As_unlabeled_10.pt'
+traj_min: 0.
+traj_max: 22.

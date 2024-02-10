@@ -1,0 +1,26 @@
+name: resi
+dyna: neuronal
+mech: 3
+mech_id: 3
+beta_c: 6.61
+remove_h: null
+pregene: True
+traj_max: 22.0
+traj_min: 0.0
+
+
+semi_data_file: 'graphode/neuronal/mech_3_val_test_90.pt'
+load_semi: False
+semi_load_data_path: null
+
+retrain_data_file_pos: 'graphode/neuronal/enhance/enhance_pos.pt'
+
+retrain_data_file_neg: 'graphode/neuronal/enhance/enhance_neg.pt'
+uncond: True
+retrain_data_file_uncond: graphode/neuronal/enhance/enhance_theory.pt
+
+fuse_original: True
+
+loadpath: '../../../ckpts/neuronal-5/full.ckpt'
+
+test_data_file: 'graphode/neuronal/test.pt'

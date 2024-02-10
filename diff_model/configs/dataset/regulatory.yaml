@@ -1,0 +1,8 @@
+name: resi
+dyna: regulatory
+mech: 3
+beta_c: 5.60 #6.61
+remove_h: null
+data_file_path: 'diffusion/regulatory/As_unlabeled_5.pt'
+traj_max: 5.0
+traj_min: 0.0

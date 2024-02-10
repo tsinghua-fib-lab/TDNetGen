@@ -1,0 +1,31 @@
+# Model settings
+type: 'discrete'
+transition: 'marginal'                          # uniform or marginal
+model: 'graph_tf'
+diffusion_steps: 500
+diffusion_noise_schedule: 'cosine'              # 'cosine', 'polynomial_2'
+n_layers: 5
+resample: False
+resample_params:
+    t_T: ${model.diffusion_steps}
+    n_sample: 1
+    jump_length: 10
+    jump_n_sample: 5
+
+
+extra_features: 'all'        # 'all', 'cycles', 'eigenvalues' or null
+# Do not set hidden_mlp_E, dim_ffE too high, computing large tensors on the edges is costly
+# At the moment (03/08), y contains quite little information
+
+# hidden_mlp_dims: {'X': 256, 'E': 128, 'y': 128}
+hidden_mlp_dims: {'X': 128, 'E': 64, 'y': 64}
+# hidden_mlp_dims: {'X': 64, 'E': 32, 'y': 32}
+
+# The dimensions should satisfy dx % n_head == 0
+
+# hidden_dims : {'dx': 64, 'de': 16, 'dy': 16, 'n_head': 4, 'dim_ffX': 64, 'dim_ffE': 32, 'dim_ffy': 32}
+# hidden_dims : {'dx': 256, 'de': 64, 'dy': 64, 'n_head': 8, 'dim_ffX': 256, 'dim_ffE': 128, 'dim_ffy': 128}
+hidden_dims : {'dx': 128, 'de': 32, 'dy': 32, 'n_head': 4, 'dim_ffX': 128, 'dim_ffE': 64, 'dim_ffy': 64}
+# hidden_dims : {'dx': 64, 'de': 16, 'dy': 16, 'n_head': 2, 'dim_ffX': 64, 'dim_ffE': 32, 'dim_ffy': 32}
+
+lambda_train: [5, 0]

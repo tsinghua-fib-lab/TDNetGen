@@ -1,0 +1,90 @@
+# Training settings
+n_epochs: 1000
+batch_size: 18
+# lr: 0.001
+lr: 0.0005
+clip_grad: null          # float, null to disable
+save_model: True
+num_workers: 8
+ema_decay: 0           # 'Amount of EMA decay, 0 means off. A reasonable value  is 0.999.'
+progress_bar: false
+weight_decay: 1e-12
+optimizer: adamw # adamw,nadamw,nadam => nadamw for large batches, see http://arxiv.org/abs/2102.06356 for the use of nesterov momentum with large batches
+seed: 0
+early_stopping: True
+
+num_env: 1 # for adaption and 9 for training
+code_dim: 4
+is_layer: False
+
+n_data_per_env:
+    train: 128
+    val: 32
+    test: 40
+
+n_data_per_env_adapt:
+    train: 8
+    val: 32
+    test: 40
+minibatch_size: 8 # for adaption, since adapt data equals to 8; and 10 for training
+
+# traj_min: 0.
+# traj_max: 22.
+
+
+
+output_dim: 1
+dynamic_coef: 1.0
+stable_coef: 5.0
+resi_coef: 5.0
+resilience_threshold: 0.5
+num_encoder_layers: 3
+num_decoder_layers: 2
+num_classifier_layers: 3
+th_ode_method: 'rk4'
+init_epsilon: 0.99
+update_epsilon_every: 16
+patience: 20
+input_dim: 3
+
+
+# GraphODE
+window: 10
+T: 50
+time_ticks: 100
+ode_use_length: 6
+num_gnn_layers: 3
+dropout_rate: 0.3
+
+
+# Transformers
+# is_trm: True
+# trm_input_dim: 1
+# hidden_dim: 8
+# max_seq_len: 1000
+# n_trm_layers: 1
+# n_heads: 4
+
+# Classifier hyperparameters
+trans_emb_size: 32
+input_plane: 2
+input_size: 1
+gcn_layers: 5
+trans_layers: 1
+pool_type: 'mean'
+with_gnn: True
+with_trm: True
+n_heads: 4
+seq_len: 6
+gcn_emb_size: 8
+hidden_layers: 3
+
+# Classifier hyperparameters
+is_map_time: False
+num_traj: 2
+node_dim: 16
+num_clasf_gnn_layers: 3
+num_clasf_fc_layers: 3
+clasf_out_dim: 1
+classification_steps: 10
+
