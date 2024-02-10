@@ -61,4 +61,4 @@ We use F1-score and accuracy (ACC) to measure the performance of models. It is w
 
 ## License
 
-The software in this repository is freely available under MIT license. Please see the [license](https://github.com/tsinghua-fib-lab/TDNetGen/blob/main/LICENSE) 
+The software in this repository is freely available under MIT license. Please see the [license](https://github.com/tsinghua-fib-lab/TDNetGen/blob/main/LICENSE) for further details.
